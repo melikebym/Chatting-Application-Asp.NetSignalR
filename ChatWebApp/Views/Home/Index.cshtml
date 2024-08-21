@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+
+<style>
+    .form-group {
+        margin-bottom: 3rem;
+        color: #4f6ebd;
+    }
+
+
+    .btn-custom {
+        background-color: #4f6ebd; /* Örnek bir renk */
+        color: white;
+        width: 450px;
+    }
+
+    .container {
+        width: 900px;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        width: 450px;
+        margin-bottom: 10px;
+    }
+ 
+
+    hr {
+        width: 450px;
+        border: 2px solid; /* Çizginin kalınlığını ve rengini belirler */
+        color: #4f6ebd;
+    }
+
+   /*  body {
+        background-image: url('images/background1.jpg');
+    } */
+
+    .logo {
+        position: absolute;
+        top: 80px;
+        left: 100px;
+        height: 550px;
+        border-radius:20px;
+        margin-right: 50px;
+        
+    }
+
+    .row {
+        margin-top:100px;
+        margin-left:300px;
+    }
+
+    .text-center {
+        color: #4f6ebd;
+        margin-left:180px;
+    }
+    
+</style>
+
+      
+        <div class="container mt-5">
+    <img src="~/images/start-picture.png" alt="Logo" class="logo" />
+
+            <div class="row">
+                <div class=" col-md-6 offset-md-3">
+
+
+                    <h1 class="text-center mt-5 ">Login</h1>
+                    <hr />
+
+                    <div class="form-group">
+                        <label for="display">Asm Code:</label>
+                        <input type="text" class="form-control" id="displayCode" />
+
+                        <label for="displayId">Unit Code:</label>
+                        <input type="text" class="form-control" id="displayId" />
+
+                        <label for="displayname">Full Name:</label>
+                        <input type="text" class="form-control" id="displayname" />
+                    </div>
+
+                    <button id="submitName" class="btn btn-custom ">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.getElementById("submitName").addEventListener("click", function () {
+        var userName = document.getElementById("displayname").value;
+        if (userName) {
+            // Kullanıcı adını localStorage'a kaydet
+            localStorage.setItem("UserName", userName);
+            // Mesaj ekranına yönlendir
+            window.location.href = "Home/Chat";
+        }
+    });
+</script>

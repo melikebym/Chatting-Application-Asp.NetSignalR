@@ -1,0 +1,1410 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+ 
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <nav class="menu">
+                <ul class="items mt-5">
+                    <li class="item  ">
+                        <button id="toggle-discussions" class="btn btn-link">
+                            <i class="fa fa-commenting " aria-hidden="true"></i> <!-- Mesaj simgesi, aktif olarak seçili -->
+                            <img class="window" src="~/images/window.png" alt="Alternate Text" />
+                        </button>
+                    </li>
+                    <li class="item-toggle ">
+                        <button id="toggle-discussions2" style="display: none;" class="btn btn-link ">
+                            <i class="fa fa-commenting " aria-hidden="true"></i> <!-- Mesaj simgesi, aktif olarak seçili -->
+                            <img class="active-users" src="~/images/group.png" alt="Alternate Text" />
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="discussions">
+                <div class="discussion search">
+                    <div class="searchbar">
+                        <i class="fa fa-search" aria-hidden="true"></i> <!-- Arama simgesi -->
+                        <input type="text" id="search-input" placeholder="Search..."> </input> <!-- Arama kutusu -->
+                    </div>
+                </div>
+
+                <div class="discussions-main">
+                    <div class="list-group clients ">
+                        <p class="all-chats">Tüm Sohbetler</p>
+                   @*      <a class="list-group-item list-group-item-action users active" id="all-client" >
+                            Mesajını Tüm Sohbetlere Gönder
+                        </a> *@
+                        <div id="_clients">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="discussions-container">
+                    <div id="new-discussions-container">
+                        <input class="form-control form-control-lg" type="text" placeholder="Grup adı" id="txtOdaAdi">
+                        <button class="btn btn-info rightButton" id="btnOdaOlustur">Grup Oluştur</button>
+                        <select class="form-select rooms" multiple>
+                            <option selected value="-1">Grup seçiniz ya da oluşturunuz</option>
+                        </select>
+                        <button type="button" class="btn btn-primary rightButton" id="btnOdalaraGir">
+                            Seçili Gruba Gir
+                        </button>
+                        <button type="button" class="btn btn-online-finder rightButton" id="btnCevrimiciGoster">
+                            Gruptaki Kullanıcıları Gör
+                        </button>
+                        <br><br><br>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="chat">
+
+
+                <div class="header-chat">
+                    <i class="icon fa fa-user-o" aria-hidden="true"></i> <!-- Kullanıcı simgesi -->
+                    <div class="chat-header">
+                        <button id="btn-back">
+                            <img class="back-arrow" src="~/images/back-arrooww.png" alt="Alternate Text" />
+                        </button>
+                        <span id="chat-header-name"></span>
+                    </div>
+                </div>
+
+                <div class="main-chat">
+                    <img class="start-logo" src="~/images/logo-new.jpg" alt="Alternate Text" />
+                    <div class="start-text">Aktif kullanıcılar ile özel olarak ya da grup halinde sohbete başlayabilirsiniz!</div>
+                </div>
+
+                <div class="chat-area" style="display: none;">
+                    <div class="chat-messages flex-grow-1 overflow-auto">
+                        <ul id="discussion" class="list-group"></ul>
+                    </div>
+                    <div class="chat-input ">
+                        <textarea id="message" placeholder="Mesajınızı yazın..."></textarea>
+                        <button id="btnGonder">Gönder</button>
+                    </div>
+                </div>
+
+                <div class="chat-area-container2">
+                    <!-- Yeni chat-area2 öğeleri buraya dinamik olarak eklenecek -->
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+  
+</>
+</html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/microsoft-signalr/signalr.min.js"></script>
+
+<script>
+
+    window.addEventListener('beforeunload', function (event) {
+        // Tüm localStorage öğelerini temizle
+        localStorage.clear();
+    });
+
+ 
+
+    $(document).ready(() => {
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("https://localhost:44398/chathub")
+            .build();
+
+        connection.start().then(() => {
+            const nickName = localStorage.getItem("UserName");
+            if (nickName) {
+                connection.invoke("GetNickName", nickName).catch(error => console.log(error));
+                // $(".disabled").removeAttr("disabled");
+                connection.invoke("GetClients").catch(error => console.log(error)); // Get the list of clients
+
+            }
+        }).catch(err => console.error(err.toString()));
+
+        $(".disabled").attr("disabled", "disabled");
+
+        $("#btn-back").hide(); // İlk başta butonu gizleyin
+
+        $("#btn-back").click(() => {
+            $(".chat-area").hide();
+            $(".client-list").show(); 
+            $(".main-chat").show();
+            $("#btn-back").hide(); 
+        });
+
+        $("body").on("click", ".users", function () {
+            $(".users").each((index, item) => {
+                item.classList.remove("active");
+            });
+            $(this).addClass("active");
+            var nickName = this.dataset.nickName;
+            $("#chat-header-name").text(nickName);
+            $(".chat-area").show();
+            $(".main-chat").hide();
+            $(".chat-area-container2").hide();
+            $(".client-list").hide();
+            $("#btn-back").show(); 
+            loadMessages(nickName);
+        });
+
+        connection.on("clientJoined", nickName => {
+            $("#clientDurumMesajlari").html(`${nickName} giriş yaptı.`);
+            $("#clientDurumMesajlari").fadeIn(2000, () => {
+                setTimeout(() => {
+                    $("#clientDurumMesajlari").fadeOut(2000);
+                }, 2000);
+            });
+        });
+
+        document.getElementById('toggle-discussions').addEventListener('click', function () {
+            var discussions = document.querySelector('.discussions');
+            var toggleDiscussions2 = document.getElementById('toggle-discussions2');
+
+            if (discussions.style.display === 'none' || discussions.style.display === '') {
+                discussions.style.display = 'block';
+                toggleDiscussions2.style.display = 'block'; // Kapalı ise toggle-discussions2'yi göster
+            } else {
+                discussions.style.display = 'none';
+                toggleDiscussions2.style.display = 'none'; // Açık ise toggle-discussions2'yi gizle
+            }
+        });
+
+
+        document.getElementById('btn-back').addEventListener('click', function () {
+            // Seçili client'in adını temizle
+            document.getElementById('chat-header-name').textContent = 'Sohbete Başlayabilirsiniz';
+
+            // Diğer işlemler
+            $(".chat-area").hide();
+            $(".client-list").show();
+            $("#btn-back").hide(); // Butonu gizleyin
+        });
+
+
+
+        $("#search-input").on("input", function () {
+            var searchTerm = $(this).val().toLowerCase();
+            console.log("Arama Terimi: " + searchTerm); 
+
+            var clients = $("#_clients .list-group-item");
+            clients.each(function () {
+                var nickName = $(this).data("nick-name");
+                if (nickName && nickName.toLowerCase().includes(searchTerm)) {
+                    $(this).prependTo("#_clients");
+                } else {
+                    $(this).appendTo("#_clients");
+                }
+            });
+        });
+
+
+        document.getElementById('toggle-discussions2').addEventListener('click', function () {
+            var discussionsContainer = document.getElementById('discussions-container');
+            var discussions = document.querySelector('.discussions-main');
+            $(".chat-area").hide();
+            $(".header-chat").hide();
+            $(".chat-area-container2").hide();
+
+
+            // discussions-container'ı aç/kapa ve discussions-main'i gizle/göster
+            if (discussionsContainer.style.display === 'none' || discussionsContainer.style.display === '') {
+                discussionsContainer.style.display = 'block';
+                discussions.style.display = 'none';
+            } else {
+                discussionsContainer.style.display = 'none';
+                discussions.style.display = 'block';
+                updateClients();
+            }
+
+        });
+
+       
+        updateClients();
+
+        // connection.on("GetClients", clients => {
+        //     $("#_clients").html("");
+        //     $.each(clients, (index, item) => {
+        //         var newClient = document.createElement("a");
+        //         newClient.className = "list-group-item list-group-item-action users";
+        //         newClient.dataset.nickName = item.nickName;
+
+        //         var photoDiv = document.createElement("div");
+        //         photoDiv.className = "photo";
+        //         photoDiv.style.backgroundImage = "url(../images/logo-new.jpg)";
+
+        //         var onlineDiv = document.createElement("div");
+        //         onlineDiv.className = "online";
+
+        //         photoDiv.appendChild(onlineDiv);
+
+        //         var userNameDiv = document.createElement("div");
+        //         var userNameSpan = document.createElement("div");
+        //         userNameSpan.className = "user-name";
+        //         userNameSpan.textContent = (item.nickName === localStorage.getItem("UserName")) ? "sen" : item.nickName;
+
+
+        //         userNameDiv.appendChild(userNameSpan);
+
+        //         newClient.appendChild(photoDiv);
+        //         newClient.appendChild(userNameDiv);
+
+        //         $("#_clients").append(newClient);
+
+        //         newClient.addEventListener("click", function () {
+        //             $(".header-chat").show();
+        //             var nickName = this.dataset.nickName;
+        //             $("#chat-header-name").text(nickName);
+        //             $(".chat-area").show();
+        //             $(".client-list").hide();
+        //             loadMessages(nickName);
+        //         });
+        //     });
+        // });
+
+       
+  
+
+        connection.on("receiveMessage", (message, clientName) => {
+            console.log(message);
+            console.log(clientName);
+            var date = new Date().toLocaleString();
+            var displayName = clientName === localStorage.getItem("UserName") ? "Sen" : clientName;
+
+            var text = `
+                       <li class='list-group-item ${displayName === "Sen" ? "message-right" : "message-left"}'>
+                    <div class="message-header">
+                        <span class="message-sender">${displayName}</span>
+                    </div>
+                    <div class="message-content">
+                        ${message}
+                    </div>
+                    <div class="message-time">
+                        ${date}
+                    </div>
+                      </li>`;
+            $("#discussion").append(text);
+            saveMessage(clientName, message, clientName, date);
+
+            // Client listesini güncelle
+            updateClientList(clientName, message, date);
+        });
+
+        $("#btnGonder").click(() => {
+            const clientName = $("#chat-header-name").text();
+            const message = $("#message").val();
+            const senderName = localStorage.getItem("UserName");
+            const date = new Date().toLocaleString();
+            connection.invoke("SendMessageAsync", message, clientName).catch(err => console.error(err.toString()));
+            $("#message").val('');
+            saveMessage(clientName, message, senderName, date);
+
+            // Client listesini güncelle
+            updateClientList(clientName, message, date);
+        });
+
+
+        function loadMessages(clientName) {
+            $("#discussion").html("");
+            var messages = JSON.parse(localStorage.getItem(clientName)) || [];
+            messages.forEach(msg => {
+                var displayName = msg.senderName === localStorage.getItem("UserName") ? "Sen" : msg.senderName;
+
+                var text = `
+                            <li class='list-group-item ${displayName === "sen" ? "message-right" : "message-left"}'>
+                        <div class="message-header">
+                            <span class="message-sender">${displayName}</span>
+                        </div>
+                        <div class="message-content">
+                            ${msg.message}
+                        </div>
+                        <div class="message-time">
+                            ${msg.date}
+                        </div>
+                    </li>`;
+                $("#discussion").append(text);
+            });
+        }
+
+        function updateClientList(clientName, message, date) {
+            $(".users").each((index, item) => {
+                if (item.dataset.nickName !== localStorage.getItem("UserName") && item.dataset.nickName === clientName) {
+                    var userNameSpan = $(item).find(".user-name");
+                    var lastMessage = $(item).find(".last-message");
+                    if (lastMessage.length === 0) {
+                        lastMessage = $(`<div class="last-message"></div>`);
+                        userNameSpan.after(lastMessage); // userNameSpan'ın ardına ekle
+                    }
+                    var displayName = clientName === localStorage.getItem("UserName") ? "Sen" : clientName;
+
+                    lastMessage.html(`<div class="message-content">${message}</div><div class="message-time">${date}</div>`);
+                }
+            });
+        }
+
+        let _groupName = "";
+        $("#btnGrubaGonder").click(() => {
+            const message = $("#message2").val();
+            if (_groupName != "") {
+                connection.invoke("SendMessageToGroupAsync", _groupName, message);
+                const _message = $(".message").clone();
+                _message.removeClass("message");
+                _message.find("p").html(message);
+                _message.find("h5").eq(1).html(localStorage.getItem("UserName"));
+                $(".messages").append(_message);
+            }
+        });
+
+        connection.on("receiveGroupMessage", (groupName, message, senderName) => {
+            var date = new Date().toLocaleString();
+            var text = `
+            <li class='list-group-item ${senderName === localStorage.getItem("UserName") ? "message-right" : "message-left"}'>
+                <div class="message-header">
+                        <span class="message-sender"> ~${senderName}</span>
+                </div>
+                <div class="message-content">
+                    ${message}
+                </div>
+                <div class="message-time">
+                    ${date}
+                </div>
+            </li>`;
+            var idname = `#discussion2-${groupName}`;
+            $(idname).append(text);
+            saveMessage(`group:${groupName}`, message, senderName, date);
+
+            // Client listesini güncelle
+            updateClientList(`group:${groupName}`, message, date);
+        });
+
+        let saveQueue = Promise.resolve();
+
+        function saveMessage(clientName, message, senderName, date) {
+            saveQueue = saveQueue.then(() => {
+                var messages = JSON.parse(localStorage.getItem(clientName)) || [];
+                messages.push({ message: message, senderName: senderName, date: date });
+                return localStorage.setItem(clientName, JSON.stringify(messages));
+            }).catch(error => {
+                console.error("Error saving message:", error);
+            });
+        }
+
+        $("#btnOdalaraGir").click(() => {
+            // updateClients();
+            $(".header-chat").show();
+            $(".chat-area-container2").show();
+            $(".main-chat").hide();
+
+            let groupNames = [];
+            $(".rooms option:selected").map((i, e) => {
+                groupNames.push(e.innerHTML);
+            });
+            connection.invoke("AddClientToGroup", groupNames);
+            $(".chat-area").hide();
+
+            // Tüm membersContainer'ları gizle
+            $(".group-members").hide();
+
+            // Seçilen odaların adlarını al
+            const selectedRooms = $(".rooms").val();
+            if (selectedRooms && selectedRooms.length > 0) {
+                selectedRooms.forEach(roomName => {
+                    showChatArea2(roomName);
+                    connection.invoke("GetGroupMembers", roomName).then(members => {
+                        displayGroupMembers(roomName, members);
+                        $(`#members-${roomName}`).show();
+                    }).catch(error => {
+                        console.error("Error getting group members:", error);
+                    });
+                });
+            }
+                updateClients();
+            
+            
+
+        });
+
+
+
+        function updateClients() {
+            connection.on("GetClients", clients => {
+                $("#_clients").html("");
+                clients.forEach(client => {
+                    console.log(client)
+                    var newClient = document.createElement("a");
+                    newClient.className = "list-group-item list-group-item-action users";
+                    newClient.dataset.nickName = client.nickName;
+
+                    var photoDiv = document.createElement("div");
+                    photoDiv.className = "photo";
+                    photoDiv.style.backgroundImage = "url(../images/logo-new.jpg)";
+
+                    var onlineDiv = document.createElement("div");
+                    onlineDiv.className = "online";
+
+                    photoDiv.appendChild(onlineDiv);
+
+                    var userNameDiv = document.createElement("div");
+                    var userNameSpan = document.createElement("div");
+                    userNameSpan.className = "user-name";
+                    userNameSpan.textContent = (client.nickName === localStorage.getItem("UserName")) ? "sen" : client.nickName;
+
+                    userNameDiv.appendChild(userNameSpan);
+
+                    newClient.appendChild(photoDiv);
+                    newClient.appendChild(userNameDiv);
+
+                    $("#_clients").append(newClient);
+
+                    newClient.addEventListener("click", function () {
+                        $(".header-chat").show();
+                        var nickName = this.dataset.nickName;
+                        $("#chat-header-name").text(nickName);
+                        $(".chat-area").show();
+                        $(".client-list").hide();
+                        loadMessages(nickName);
+                    });
+                });
+            });
+        }
+
+
+
+        $("#btnCevrimiciGoster").click(() => {
+            // Seçili olan grubun adı
+            const selectedRooms = $(".rooms").val();
+
+            // Eğer seçili odalardan biri varsa
+            if (selectedRooms && selectedRooms.length === 1) {
+                const selectedRoomName = selectedRooms[0];
+
+                // Seçili odanın üyelerinin container'ını seç
+                const membersContainer = $(`#members-${selectedRoomName}`);
+
+                // Eğer container mevcutsa
+                if (membersContainer.length > 0) {
+                    // Container'ın görünürlüğünü kontrol et ve toggle yap
+                    membersContainer.toggle();
+                } else {
+                    console.log("Seçilen odanın üyeleri bulunamadı.");
+                }
+            } else {
+                console.log("Birden fazla oda seçilmemeli.");
+            }
+        });
+
+
+        function showChatArea2(roomName) {
+            // Mevcut chat-area2'yi gizle
+            $(".chat-area2").hide();
+
+            // Yeni chat-area2 oluştur
+            const chatArea2 = document.createElement("div");
+            chatArea2.className = "chat-area2";
+            chatArea2.id = `chat-area2-${roomName}`;
+            chatArea2.style.display = "block";
+
+            const chatMessages2 = document.createElement("div");
+            chatMessages2.className = "chat-messages2 flex-grow-1 overflow-auto";
+            chatMessages2.id = `discussion2-${roomName}`;
+            chatArea2.appendChild(chatMessages2);
+
+            const chatInput2 = document.createElement("div");
+            chatInput2.className = "chat-input2";
+            const textarea = document.createElement("textarea");
+            textarea.id = `message2-${roomName}`;
+            textarea.placeholder = "Mesajınızı yazın...";
+            chatInput2.appendChild(textarea);
+
+            const sendButton = document.createElement("button");
+            sendButton.id = `btnGrubaGonder-${roomName}`;
+            sendButton.textContent = "Gönder";
+            chatInput2.appendChild(sendButton);
+
+            chatArea2.appendChild(chatInput2);
+
+            // Yeni chat-area2'yi chat container'a ekle
+            $(".chat-area-container2").append(chatArea2);
+
+            // Yeni chat-area2'yi göster
+            $(`#chat-area2-${roomName}`).show();
+
+            $("#chat-header-name").text(roomName);
+            // Mesajları yükle
+            loadGroupMessages(roomName);
+
+            // Gönder butonuna tıklama olayı ekle
+            sendButton.addEventListener("click", () => {
+                const message = textarea.value;
+                if (roomName != "") {
+                    connection.invoke("SendMessageToGroupAsync", roomName, message);
+                    textarea.value = '';
+                    saveMessage(`group:${roomName}`, message, localStorage.getItem("UserName"), new Date().toLocaleString());
+                }
+            });
+
+            // Grup üyelerini al
+            connection.invoke("GetGroupMembers", roomName).then(members => {
+                displayGroupMembers(roomName, members);
+            }).catch(error => {
+                console.error("Error getting group members:", error);
+            });
+
+        }
+
+        connection.on("receiveGroupMembers", (groupName, members) => {
+            displayGroupMembers(groupName, members);
+        });
+
+
+        function displayGroupMembers(groupName, members) {
+            // Mevcut members container'ı al veya oluştur
+            let membersContainer = document.getElementById(`members-${groupName}`);
+            if (!membersContainer) {
+                membersContainer = document.createElement("div");
+                membersContainer.id = `members-${groupName}`;
+                membersContainer.className = "group-members";
+
+                // Container'ı discussions-container'a ekle
+                $("#discussions-container").append(membersContainer);
+            }
+
+            // Başlık oluştur ve ekle
+            let title = membersContainer.querySelector(".members-header");
+            if (!title) {
+                title = document.createElement("div");
+                title.className = "members-header";
+                title.textContent = `Grup:${groupName} İçin Aktif Kullanıcılar`;
+                membersContainer.appendChild(title);
+            }
+
+            // Üye listesini oluştur veya al
+            let membersList = membersContainer.querySelector(".members-list");
+            if (!membersList) {
+                membersList = document.createElement("div");
+                membersList.className = "members-list";
+                membersContainer.appendChild(membersList);
+            }
+
+            // Mevcut üyeleri almak
+            const existingMembers = new Set(Array.from(membersList.children).map(child => child.textContent));
+
+            if (members != null) {
+                // Yeni üyeleri ekle
+                members.forEach(member => {
+                    if (!existingMembers.has(member)) {
+                        const memberItem = document.createElement("div");
+                        memberItem.className = "member-item";
+
+                        const onlineDiv = document.createElement("div");
+                        onlineDiv.className = "online-member";
+
+                        const memberName = document.createElement("span");
+                        memberName.textContent = member;
+
+                        memberItem.appendChild(onlineDiv);
+                        memberItem.appendChild(memberName);
+                        membersList.appendChild(memberItem);
+                    }
+                });
+            }
+        }
+
+
+
+        function loadGroupMessages(groupName) {
+            const messages = JSON.parse(localStorage.getItem(`group:${groupName}`)) || [];
+            $(`#discussion2-${groupName}`).html("");
+            messages.forEach(msg => {
+                var displayName = msg.senderName === localStorage.getItem("UserName") ? "Sen" : msg.senderName;
+
+                var text = `
+                     <li class='list-group-item ${displayName === "Sen" ? "message-right" : "message-left"}'>
+                        <div class="message-header">
+                            <span class="message-sender">${displayName}</span>
+                        </div>
+                        <div class="message-content">
+                            ${msg.message}
+                        </div>
+                        <div class="message-time">
+                            ${msg.date}
+                        </div>
+                    </li>`;
+                $(`#discussion2-${groupName}`).append(text);
+            });
+        }
+
+        $(".rooms").change(function () {
+            let groupName = $(this).val();
+            _groupName = groupName[0];
+            connection.invoke("GetClientToGroup", groupName[0]);
+        });
+
+        $("#btnOdaOlustur").click(() => {
+            connection.invoke("AddGroup", $("#txtOdaAdi").val());
+        });
+
+        connection.on("groups", groups => {
+            $(".rooms").html("");
+            let options = ` <option selected value="-1"></option> `;
+            $.each(groups, (index, item) => {
+                options += `<option value="${item.groupName}">${item.groupName}</option>`;
+            });
+            $(".rooms").append(options);
+        });
+    });
+
+</script> 
+
+
+    <style>
+
+        .main-chat{
+            display:block;
+        }
+
+        .main-chat .start-logo {
+            display: flex;
+            height: 130px;
+            margin-top: 200px;
+            margin-left: 35vh;
+        }
+
+
+        .start-text {
+            font-size:15px;
+            text-align: center;
+        }
+
+    .group-members {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        height: 180px;
+        overflow-y: auto;
+    }
+
+    .members-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .members-list {
+        margin-left: 10px;
+    }
+
+    .member-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .online-member {
+        width: 13px;
+        height: 13px;
+        background-color: #8BC34A;
+        border-radius: 50%;
+        border: 3px solid #FAFAFA;
+        margin-right: 10px;
+    }
+
+    .user-name {
+        display: block;
+        font-weight: bold;
+    }
+
+    .last-message {
+        display: block;
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .message-content {
+        display: block;
+    }
+
+    .message-time {
+        display: block;
+        font-size: 0.8em;
+        color: #999;
+    }
+
+    .chat {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        width: calc(65% - 85px);
+        position: relative;
+    }
+
+    .chat-area {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .chat-header {
+        padding: 10px;
+        text-align: center;
+        border: none;
+        padding-right: 20px;
+    }
+
+
+        .chat-header button {
+            outline: none; /* Butonun altındaki gri rengi yok etmek için */
+            background-color: transparent; /* Arka plan rengini şeffaf yapmak için */
+            border: none; /* Kenarlığı kaldırmak için */
+            cursor: pointer; /* İmleç üzerine geldiğinde el işaretini göstermek için */
+            margin-left: -45px;
+
+        }
+
+        .chat-header button:focus,
+        .chat-header button:active {
+            outline: none; /* Butonun altındaki gri rengi yok etmek için */
+            }
+
+            .chat-header button img {
+                width: 40px; /* Resmin genişliğini ayarlamak için */
+                height: 40px; /* Resmin yüksekliğini ayarlamak için */
+            }
+
+            #btn-back {
+            display: none;
+        }
+
+    .chat-messages {
+        height: 400px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .chat-input {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom:-100px;
+        margin-top: 15px;
+    }
+
+        .chat-input input {
+            width: 80%;
+            padding: 10px;
+
+        }
+
+        .chat-input button {
+            border-radius: 50px;
+            background-color: #4f6ebd; /* Arka plan rengi */
+            color: white;
+            padding: 10px 20px; /* Butonun boyutunu ayarlamak için */
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            margin-left:10px;
+            margin-top:15px;
+            
+        }
+           
+        .chat-input textarea {
+            width: 100%;
+            border-radius: 10px;
+            height: 50px;
+            resize: none; /* Yeniden boyutlandırma imlecini kaldır */
+            overflow: hidden; /* Varsayılan olarak scrollbar'ları gizle */
+            text-align: left; /* Metni sola hizala */
+            margin-top: 15px;
+            box-shadow: none;
+            line-height: 1.4; /* Satır arasındaki mesafeyi ayarlamak için */
+            padding: 10px 15px; /* Metni yatayda ortalamak için */
+            text-indent: 2px; /* Solda 2px boşluk bırakmak için */
+        }
+
+
+        .chat-input textarea::-webkit-scrollbar {
+                width: 0; /* Webkit tabanlı tarayıcılar için scrollbar genişliğini sıfırla */
+                height: 0; /* Webkit tabanlı tarayıcılar için scrollbar yüksekliğini sıfırla */
+            }
+
+            .chat-input textarea:hover,
+            .chat-input textarea:focus,
+            .chat-input textarea:active {
+                overflow: auto; /* Üzerine gelindiğinde, odaklandığında veya aktif olduğunda scrollbar'ları göster */
+            }
+
+                .chat-input textarea:hover::-webkit-scrollbar,
+                .chat-input textarea:focus::-webkit-scrollbar,
+                .chat-input textarea:active::-webkit-scrollbar {
+                    width: 8px; /* Webkit tabanlı tarayıcılar için scrollbar genişliğini ayarla */
+                    height: 8px; /* Webkit tabanlı tarayıcılar için scrollbar yüksekliğini ayarla */
+                }
+
+
+
+    .chat-area2 {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    .chat-messages2 {
+        height: 520px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .list-group2 {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-radius: .25rem;
+    }
+
+    .chat-input2 {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: -100px;
+        margin-top: 15px;
+    }
+
+    .chat-input2 textarea {
+        width: 100%;
+        border-radius: 10px;
+        height: 50px;
+        resize: none;
+        overflow: hidden;
+        text-align: left;
+        margin-top: 15px;
+        box-shadow: none;
+        line-height: 1.4;
+        padding: 10px 15px;
+        text-indent: 2px;
+    }
+
+    .chat-input2 button {
+        border-radius: 50px;
+        background-color: #4f6ebd;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+
+            .window {
+                height: 35px;
+            }
+
+            .active-users {
+                height: 48px;
+            }
+
+         
+
+            #toggle-discussions2 {
+                display: none; /* Varsayılan olarak gizli */
+            }
+
+            .input-group {
+                margin-left: auto; /* Input grubunu sağa hizalamak için */
+                margin-right: 220px; /* Sağdan boşluk bırakmak için */
+                width: 650px;
+                position: absolute;
+                bottom: -100px;
+                width: 100%;
+                flex: 0 0 auto;
+            }
+
+            .join-message {
+                margin-left: 7px;
+            }
+
+            .input-group-append .btn {
+                border-radius: 50px;
+                background-color: #4f6ebd; /* Arka plan rengi */
+            }
+
+            .form-control-lg {
+                width: 300px !important;
+                margin-top: 30px;
+            }
+
+  
+            .btn-info {
+                margin-top:20px;
+                margin-left: 20px;
+                background-color: #4f6ebd;
+                margin-bottom: 25px;
+            }
+
+    .rooms {
+        height: 130px !important; /* İstediğiniz genişlik değeri */
+        margin-bottom:20px;
+    }
+
+            .message-left {
+                text-align: left;
+                background-color: #f1f1f1;
+                border-radius: 15px;
+                margin-right: 25%;
+                padding: 10px;
+                clear: both;
+                float: left;
+                margin-top: 5px;
+                border: none; /* Kenarlık kaldır */
+                box-shadow: none; /* Gölge kaldır */
+            }
+
+            .message-right {
+                text-align: right;
+                background-color: #e3effd;
+                border-radius: 25px;
+                margin-left: 25%;
+                padding: 10px;
+                clear: both;
+                float: right;
+                margin-top: 5px;
+                border: none; /* Kenarlık kaldır */
+                box-shadow: none; /* Gölge kaldır */
+            }
+
+    .message-header {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .message-time {
+        font-size: 0.8em;
+        color: #888;
+        margin-top: 5px;
+    } 
+            /* Genel sayfa stil ayarları */
+            body {
+                background-color: #F5F5F5; /* Arka plan rengi */
+                margin-top: 80px;
+
+            }
+
+            /* Ana kapsayıcı stil ayarları */
+    .container {
+                /* margin-top: 15px; */
+                padding: 0; /* İç boşluk yok */
+                background-color: #FFF; /* Beyaz arka plan */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            .row {
+                display: flex;
+                flex: 1;
+            }
+
+            .menu {
+                margin-left: 15px;
+                margin-bottom: 100px !important;
+                float: left; /* Sol tarafa yaslar */
+                height: 730px; /* Sabit yükseklik */
+                width: 70px; /* Sabit genişlik */
+                background: linear-gradient(#4768b5, #35488e); /* Gradyan arka plan */
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19); /* Gölge efekti */
+                flex: 0 0 auto;
+            }
+
+            /* Menü öğeleri stil ayarları */
+            .menu .items {
+                list-style: none; /* Liste stili yok */
+                margin: auto; /* Otomatik kenar boşluğu */
+                padding: 0; /* İç boşluk yok */
+            }
+
+            /* Menü öğesi stil ayarları */
+            .menu .items .item {
+                height: 70px; /* Sabit yükseklik */
+                border-bottom: 1px solid #6780cc; /* Alt çizgi */
+                display: flex; /* Flexbox kullanımı */
+                justify-content: center; /* Yatayda ortalama */
+                align-items: center; /* Dikeyde ortalama */
+                color: #9fb5ef; /* Yazı rengi */
+                font-size: 17pt; /* Yazı boyutu */
+            }
+
+            .menu .items .item-toggle {
+                height: 70px; /* Sabit yükseklik */
+                border-bottom: 1px solid #6780cc; /* Alt çizgi */
+                display: flex; /* Flexbox kullanımı */
+                justify-content: center; /* Yatayda ortalama */
+                align-items: center; /* Dikeyde ortalama */
+                color: #9fb5ef; /* Yazı rengi */
+                font-size: 17pt; /* Yazı boyutu */
+            }
+
+            .button-group {
+                height: 45px; /* Sabit yükseklik */
+                border-bottom: 1px solid #6780cc; /* Alt çizgi */
+                display: flex; /* Flexbox kullanımı */
+                justify-content: center; /* Yatayda ortalama */
+                align-items: center; /* Dikeyde ortalama */
+                color: #6780cc; /* Yazı rengi */
+                border: none;
+                border-radius: 30px;
+            }
+
+            .discussions .discussion .button-group:hover {
+                cursor: pointer; /* İşaretçi değiştir */
+                background-color: #5172c3; /* Arka plan rengi */
+                color: #cfe5ff; /* Yazı rengi */
+            }
+
+            /* Aktif menü öğesi stil ayarları */
+            .menu .items .item-active {
+                background-color: #5172c3; /* Arka plan rengi */
+                color: #FFF; /* Yazı rengi */
+            }
+
+            /* Menü öğesi üzerine gelindiğinde stil ayarları */
+            .menu .items .item:hover {
+                cursor: pointer; /* İşaretçi değiştir */
+                background-color: #4f6ebd; /* Arka plan rengi */
+                color: #cfe5ff; /* Yazı rengi */
+            }
+
+            /* === CONVERSATIONS === */
+            /* Konuşmalar bölümü stil ayarları */
+            .discussions {
+                width: 35%; /* Genişlik */
+                height: 730px; /* Yükseklik */
+                box-shadow: 0px 8px 10px rgba(0,0,0,0.20); /* Gölge efekti */
+                overflow: hidden; /* Taşma gizle */
+                background-color: #FAFAFA; /* Arka plan rengi */
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Konuşma öğesi stil ayarları */
+            .discussions .discussion {
+                width: 100%; /* Tam genişlik */
+                height: 90px; /* Sabit yükseklik */
+                background-color: #FAFAFA; /* Arka plan rengi */
+                border-bottom: solid 1px #E0E0E0; /* Alt çizgi */
+                display: flex; /* Flexbox kullanımı */
+                align-items: center; /* Dikeyde ortalama */
+                cursor: pointer; /* İşaretçi değiştir */
+            }
+
+            .discussions-main {
+                margin-top: 17px;
+                overflow-y: auto;
+            }
+
+
+
+            .list-group-item.list-group-item-action.users.active {
+                background-color: #FAFAFA; /* Yazı rengi */
+                color: #6780cc; /* Yazı rengi */
+                border-radius: 15px;
+            }
+
+            #discussions-container {
+                display: none; /* Varsayılan olarak gizli */
+            }
+
+
+    #discussions-container option{
+        font-size: 17px;
+    
+    }
+        .container-main .list-group-item.list-group-item-action.users.active:hover {
+                cursor: pointer; /* İşaretçi değiştir */
+                background-color: #5172c3; /* Arka plan rengi */
+                color: #cfe5ff; /* Yazı rengi */
+            }
+
+            .all-chats {
+                text-align: center;
+                background-color: #FAFAFA; /* Yazı rengi */
+                color: #6780cc; /* Yazı rengi */
+                border-radius: 15px;
+                border: 1px solid #6780cc;
+                width: 250px;
+                margin-left: 50px;
+    }
+
+            /* Arama bölümü stil ayarları */
+            .discussions .search {
+                margin-top: -20px;
+                display: flex; /* Flexbox kullanımı */
+                align-items: center; /* Dikeyde ortalama */
+                justify-content: center; /* Yatayda ortalama */
+                color: #CFD3D5; /* Yazı rengi */
+            }
+
+
+                /* Arama çubuğu input stil ayarları */
+                .discussions .search .searchbar input {
+                    height: 40px; /* Sabit yükseklik */
+                background-color: #FFF; /* Arka plan rengi */
+                width: 230px; /* Genişlik */
+                padding: 0 20px; /* İç boşluk */
+                border-radius: 50px; /* Yuvarlak köşeler */
+                border: 1px solid #7C8385; /* Kenarlık */
+                display: flex; /* Flexbox kullanımı */
+                align-items: center; /* Dikeyde ortalama */
+                cursor: pointer; /* İşaretçi değiştir */
+                margin-top: 25px;
+                }
+
+                    /* Placeholder stil ayarları */
+                    .discussions .search .searchbar input::placeholder {
+                    color: #7C8385; /* Placeholder rengi */
+                    }
+
+                /* Aktif mesaj stil ayarları */
+                .discussions .message-active {
+                    width: 98.5%; /* Genişlik */
+                    height: 90px; /* Yükseklik */
+                    background-color: #FFF; /* Arka plan rengi */
+                    border-bottom: solid 1px #E0E0E0; /* Alt çizgi */
+                }
+
+        .list-group.clients .users {
+            display: flex; /* Flexbox kullanarak yan yana yerleştirme */
+            align-items: center; /* Dikey ortalama */
+            padding: 10px; /* İç boşluk */
+            margin-bottom: 10px; /* Alt boşluk */
+            background: #f5f5f5; /* Arka plan rengi */
+            border-radius: 10px; /* Yuvarlak köşeler */
+            text-decoration: none; /* Bağlantı altı çizgisini kaldır */
+        }
+
+        .list-group.clients .users .photo {
+            margin-right: 15px; /* Sağ kenar boşluğu */
+            width: 45px; /* Genişlik */
+            height: 45px; /* Yükseklik */
+            background: #E6E7ED; /* Arka plan rengi */
+            border-radius: 50%; /* Yuvarlak köşeler */
+            background-position: center; /* Arka plan pozisyonu */
+            background-size: cover; /* Arka plan boyutu */
+            background-repeat: no-repeat; /* Arka plan tekrarı yok */
+        }
+
+        .list-group.clients .users .online {
+            position: relative; /* Göreceli konum */
+            top: 30px; /* Üst boşluk */
+            left: 35px; /* Sol boşluk */
+            width: 13px; /* Genişlik */
+            height: 13px; /* Yükseklik */
+            background-color: #8BC34A; /* Arka plan rengi */
+            border-radius: 50%; /* Yuvarlak köşeler */
+            border: 3px solid #FAFAFA; /* Kenarlık */
+        }
+
+        .list-group.clients .users .user-name {
+            font-size: 16px; /* Yazı boyutu */
+            color: #333; /* Yazı rengi */
+            font-weight: bold; /* Kalın yazı */
+        }
+
+        /* Mesaj stil ayarları */
+        .discussions .discussion .message {
+            margin: 6px 0 0 20px; /* Kenar boşlukları */
+            font-family: 'Montserrat', sans-serif; /* Yazı tipi */
+            font-size: 9pt; /* Yazı boyutu */
+            color: #515151; /* Yazı rengi */
+        }
+
+        /* Sohbet başlığı stil ayarları */
+        .header-chat {
+            background-color: #FFF; /* Arka plan rengi */
+            height: 70px; /* Yükseklik */
+            box-shadow: 0px 3px 2px rgba(0,0,0,0.100); /* Gölge efekti */
+            display: flex; /* Flexbox kullanımı */
+            align-items: center; /* Dikeyde ortalama */
+            flex: 0 0 auto;
+        }
+
+        /* Sohbet başlığı ikon stil ayarları */
+        .chat .header-chat .icon {
+            margin-left: 30px; /* Sol kenar boşluğu */
+            color: #515151; /* Yazı rengi */
+            font-size: 14pt; /* Yazı boyutu */
+        }
+
+        /* Sohbet başlığı isim stil ayarları */
+        .chat .header-chat .name {
+            margin: 0 0 0 20px; /* Kenar boşlukları */
+            text-transform: uppercase; /* Büyük harf */
+            font-family: 'Montserrat', sans-serif; /* Yazı tipi */
+            font-size: 13pt; /* Yazı boyutu */
+            color: #515151; /* Yazı rengi */
+        }
+
+        /* Sohbet başlığı sağ bölüm stil ayarları */
+        .chat .header-chat .right {
+            position: absolute; /* Mutlak konum */
+            right: 40px; /* Sağ boşluk */
+        }
+
+        /* Mesajlar bölümü stil ayarları */
+        .chat .messages-chat {
+            padding: 25px 35px;
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto; /* Kaydırma çubuğu eklemek için */
+            max-height: 550px;
+            box-sizing: border-box; /* Padding ve border dahil hesaplama */
+            flex: 1;
+        }
+
+            /* Mesaj stil ayarları */
+            .chat .messages-chat .message {
+                display: flex; /* Flexbox kullanımı */
+                align-items: center; /* Dikeyde ortalama */
+                margin-bottom: 8px; /* Alt boşluk */
+            }
+
+            /* Mesaj fotoğrafı stil ayarları */
+            .chat .messages-chat .photo {
+                display: block; /* Blok eleman */
+                width: 45px; /* Genişlik */
+                height: 45px; /* Yükseklik */
+                background: #E6E7ED; /* Arka plan rengi */
+                border-radius: 50px; /* Yuvarlak köşeler */
+                background-position: center; /* Arka plan pozisyonu */
+                background-size: cover; /* Arka plan boyutu */
+                background-repeat: no-repeat; /* Arka plan tekrarı yok */
+            }
+
+            /* Mesaj metni stil ayarları */
+            .chat .messages-chat .text {
+                margin: 0 35px; /* Kenar boşlukları */
+                background-color: #f6f6f6; /* Arka plan rengi */
+                padding: 15px; /* İç boşluk */
+                border-radius: 12px; /* Yuvarlak köşeler */
+            }
+
+        /* Sadece metin stil ayarları */
+        .text-only {
+            margin-left: 45px; /* Sol kenar boşluğu */
+        }
+
+        .form-control {
+            border: none !important;
+            width: 60%;
+            height: 50px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        
+
+        /* Sohbet alt bölümü stil ayarları */
+        .footer-chat {
+            width: calc(65% - 66px); /* Genişlik hesaplaması */
+            height: 80px; /* Yükseklik */
+            display: flex; /* Flexbox kullanımı */
+            align-items: center; /* Dikeyde ortalama */
+            position: absolute; /* Mutlak konum */
+            bottom: 10px; /* Alt boşluk */
+            background-color: transparent; /* Arka plan rengi */
+            border-top: 2px solid #EEE; /* Üst çizgi */
+        }
+
+        /* Sohbet alt bölümü buton stil ayarları */
+        .chat .footer-chat .btn {
+            margin-left: 10px; /* Sol kenar boşluğu */
+            right: 80px; /* Sağ boşluk */
+            background-color: #4f6ebd; /* Arka plan rengi */
+            color: #fff; /* Yazı rengi */
+            border-radius: 50px; /* Yuvarlak köşeler */
+        }
+
+        .footer-chat .form-group {
+            border-radius: 50px;
+            width: 600px;
+            margin-left: 50px;
+        }
+
+
+        /* Sohbet alt bölümü sağ bölüm stil ayarları */
+        .chat .footer-chat .right {
+            position: absolute; /* Mutlak konum */
+            right: 40px; /* Sağ boşluk */
+        }
+
+        /* Mesaj yazma alanı stil ayarları */
+        .write-message {
+            border: none !important; /* Kenarlık yok */
+            width: 60%; /* Genişlik */
+            height: 50px; /* Yükseklik */
+            margin-left: 20px; /* Sol kenar boşluğu */
+            padding: 10px; /* İç boşluk */
+        }
+
+        /* Placeholder stil ayarları */
+        .footer-chat input::placeholder {
+            color: #C0C0C0; /* Placeholder rengi */
+            font-size: 13pt; /* Yazı boyutu */
+        }
+
+        /* Tıklanabilir öğe stil ayarları */
+        .clickable {
+            cursor: pointer; /* İşaretçi değiştir */
+        }
+        
+        .btn-primary {
+        background-color: #4f6ebd;
+        }
+
+    .btn-online-finder {
+        background-color: #4f6ebd;
+        color: white;
+    }
+
+        .btn-online-finder : hover  {
+            color: #fff !important;
+            background-color: #0069d9 !important;
+            border-color: #0062cc !important;
+    }
+        .btn-primary : hover {
+        color: #fff !important;
+        background-color: #0069d9 !important;
+        border-color: #0062cc !important;
+        }
+    </style>
+
+

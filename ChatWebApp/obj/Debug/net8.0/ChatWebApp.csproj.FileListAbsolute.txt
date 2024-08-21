@@ -1,0 +1,246 @@
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\appsettings.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\libman.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\package-lock.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\package.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+C:\Users\melik\OneDrive\Masaüstü\staj\visual studio\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\appsettings.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\libman.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\package-lock.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\package.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\appsettings.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\libman.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\package-lock.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\package.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+C:\Users\melik\OneDrive\Masaüstü\ChatWebApp - Kopya\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\libman.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package-lock.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+D:\staj\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\libman.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package-lock.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+C:\Tamamlanmış Projelerim\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.Development.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\appsettings.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\libman.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package-lock.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\package.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.staticwebassets.runtime.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.exe
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.deps.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.runtimeconfig.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\ChatWebApp.pdb
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.AssemblyReference.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfoInputs.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.AssemblyInfo.cs
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.CoreCompileInputs.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.RazorAssemblyInfo.cs
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.build.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.development.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.ChatWebApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.build.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ChatWebApp.props
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\bundle\ChatWebApp.styles.css
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\scopedcss\projectbundle\ChatWebApp.bundle.scp.css
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.csproj.Up2Date
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\refint\ChatWebApp.dll
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.pdb
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ChatWebApp.genruntimeconfig.cache
+C:\Tamamlanmış Projelerim\ASP.NET\ChatWebApp - SON HALİ\ChatWebApp\obj\Debug\net8.0\ref\ChatWebApp.dll
